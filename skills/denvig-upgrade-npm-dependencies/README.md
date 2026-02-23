@@ -7,7 +7,7 @@ Uses the `denvig` cli tool to identify outdated dependencies and manually upgrad
 Ensure `denvig` is installed globally:
 
 ```bash
-brew install denvig/tap/denvig`
+brew install denvig/tap/denvig
 ```
 
 Then add the skill:

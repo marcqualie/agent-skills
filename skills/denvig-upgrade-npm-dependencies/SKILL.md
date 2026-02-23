@@ -1,13 +1,13 @@
 ---
 name: denvig-upgrade-npm-dependencies
 description: Use the denvig cli to upgrade your npm dependencies in the current project.
-disable-model-invocation: true
 license: MIT
-argument-hint: "[patch|minor|all|{{package}}]"
-compatibility: Requires the `denvig` CLI tool to be installed and configured in the project. Compatible with projects that use npm for dependency management.
 metadata:
   author: Marc Qualie
-  version: 0.1.0
+  version: 1.0.0
+compatibility: Requires the `denvig` CLI tool to be installed and configured in the project. Compatible with projects that use npm for dependency management.
+disable-model-invocation: true
+argument-hint: "[patch|minor|all|{{package}}]"
 allowed-tools: Bash(cat package.json) Bash(denvig outdated) Bash(denvig outdated --semver *) Bash(npm view:*) Bash(pnpm install) Bash(git add:*) Bash(git commit:*) Bash(git push:*)" Bash(gh pr create:*) Bash(gh pr open:*) WebFetch(domain:github.com)
 ---
 You are an expert software engineer specialized in managing and upgrading npm dependencies in TypeScript projects.

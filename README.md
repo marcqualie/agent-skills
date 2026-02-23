@@ -6,4 +6,5 @@ They're designed to work with Claude Code primarily but they should also be comp
 
 ## Skills
 
+- [create-pr](skills/create-pr)
 - [denvig-upgrade-npm-dependencies](skills/denvig-upgrade-npm-dependencies)

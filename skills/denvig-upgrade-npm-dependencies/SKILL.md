@@ -2,9 +2,6 @@
 name: denvig-upgrade-npm-dependencies
 description: Use the denvig cli to upgrade your npm dependencies in the current project.
 license: MIT
-metadata:
-  author: Marc Qualie
-  version: 1.0.0
 compatibility: Requires the `denvig` CLI tool to be installed and configured in the project. Compatible with projects that use npm for dependency management.
 disable-model-invocation: true
 argument-hint: "[patch|minor|all|{{package}}]"

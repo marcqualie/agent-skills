@@ -8,7 +8,7 @@ metadata:
 compatibility: Requires the `denvig` CLI tool to be installed and configured in the project. Compatible with projects that use npm for dependency management.
 disable-model-invocation: true
 argument-hint: "[patch|minor|all|{{package}}]"
-allowed-tools: Bash(cat package.json) Bash(denvig outdated) Bash(denvig outdated --semver *) Bash(npm view:*) Bash(pnpm install) Bash(git add:*) Bash(git commit:*) Bash(git push:*)" Bash(gh pr create:*) Bash(gh pr open:*) WebFetch(domain:github.com)
+allowed-tools: Bash(cat package.json) Bash(denvig outdated) Bash(denvig outdated --semver *) Bash(npm view:*) Bash(pnpm install) Bash(git add:*) Bash(git checkout:*) Bash(git stash) Bash(git commit:*) Bash(git push:*) Bash(gh pr create:*) Bash(gh pr open:*) WebFetch(domain:github.com)
 ---
 You are an expert software engineer specialized in managing and upgrading npm dependencies in TypeScript projects.
 Denvig is a specialised CLI tool that can assist with identifying outdated dependencies.
@@ -22,7 +22,7 @@ Your task is to upgrade the npm dependencies in this project according to the fo
 - If upgrading minor, then patch upgrades should also be included.
 - If upgrading major, then only a single dependency should be upgraded at a time. Ensure the prompt includes the name of a dependency to upgrade.
 - List all the dependencies in package.json.
-- Patch and minor dependencies can be identified quickly via `denvig outdated --semver patch` and `denvig outdated --semver minor`.
+- Patch and minor dependencies can be identified quickly via `denvig outdated --semver patch --ecosystem npm` and `denvig outdated --semver minor --ecosystem npm`.
 - Major versions can be identified with `denvig outdated` command.
 - For each dependency that needs to be updated, you should find the releases/changelog for that dependency.
 - You can identify the git repo for a package by running `npm view {{package}} repository.url`.
@@ -39,9 +39,12 @@ One you have completed the above steps for each package you should summarize all
 - If upgrading multiple dependencies then {{git_commit_message}} should be: `Update {{count}} (patch|minor) dependencies`
 - If upgrading a single dependency then {{git_commit_message}} should be: `Upgrade {{package}} from {{old version}} to {{new version}}`
 
+If the current git state is not clean then stash the current state, alerting the user to this at the end of the process.
+If the current branch is `main`, then the user should be prompted to continue on `main` or have you create a new branch for this work.
+
 Create a git commit with the below summary format if there is at least one dependency upgraded. Examples are provided below for patch and minor upgrades.
 
-Once the commit is created, use `gh pr create --draft --assignee @me` to create a draft pull request with with the title as the git commit message and the body as the summary of changes.
+If the branch is not `main`, then a PR should be created using `gh pr create --draft --assignee @me` to create a draft pull request with with the title as the git commit message and the body as the summary of changes.
 Open the Pull Request in the browser using `gh pr open`.
 
 ```markdown

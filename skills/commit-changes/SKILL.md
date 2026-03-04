@@ -2,9 +2,6 @@
 name: commit-changes
 description: Summarise then commit the changes in the current session.
 license: MIT
-metadata:
-  author: Marc Qualie
-  version: 1.0.0
 disable-model-invocation: true
 allowed-tools: Bash(git add:*) Bash(git commit:*) Bash(git diff:*)
 ---

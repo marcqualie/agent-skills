@@ -2,9 +2,6 @@
 name: create-pr
 description: Create a Pull Request using gh CLI
 license: MIT
-metadata:
-  author: Marc Qualie
-  version: 1.0.0
 disable-model-invocation: true
 allowed-tools: Bash(gh pr create:*) Bash(gh pr open:*) Bash(git add:*) Bash(git commit:*) Bash(git push:*)
 ---

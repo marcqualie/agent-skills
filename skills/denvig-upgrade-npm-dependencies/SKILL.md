@@ -37,7 +37,7 @@ One you have completed the above steps for each package you should summarize all
 - If upgrading a single dependency then {{git_commit_message}} should be: `Upgrade {{package}} from {{old version}} to {{new version}}`
 
 If the current git state is not clean then stash the current state, alerting the user to this at the end of the process.
-If the current branch is `main`, then the user should be prompted to continue on `main` or have you create a new branch for this work.
+If the current branch is `main` then use the `AskUserQuestion` tool to ask the user if they want you to create a new branch (recommended) or stay on main.
 
 Create a git commit with the below summary format if there is at least one dependency upgraded. Examples are provided below for patch and minor upgrades.
 

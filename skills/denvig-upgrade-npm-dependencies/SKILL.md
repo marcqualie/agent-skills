@@ -37,11 +37,13 @@ One you have completed the above steps for each package you should summarize all
 - If upgrading a single dependency then {{git_commit_message}} should be: `Upgrade {{package}} from {{old version}} to {{new version}}`
 
 If the current git state is not clean then stash the current state, alerting the user to this at the end of the process.
-If the current branch is `main` then use the `AskUserQuestion` tool to ask the user if they want you to create a new branch (recommended) or stay on main.
+If the current branch is `main` then check the git remote `origin` to make the following choice:
+- If `origin` is a github.com remote then create a new branch called `denvig/upgrade-{{count}}-{{type}}-packages`
+- If `origin` is any other provider then use your AskUserQuestion tool to ask the user if they want to create a new branch or continue on main
 
 Create a git commit with the below summary format if there is at least one dependency upgraded. Examples are provided below for patch and minor upgrades.
 
-If the branch is not `main`, then a PR should be created using `gh pr create --draft --assignee @me` to create a draft pull request with with the title as the git commit message and the body as the summary of changes.
+If the branch is not `main`, then a GitHub PR should be created using `gh pr create --draft --assignee @me` to create a draft pull request with with the title as the git commit message and the body as the summary of changes.
 Open the Pull Request in the browser using `gh pr open`.
 
 ```markdown

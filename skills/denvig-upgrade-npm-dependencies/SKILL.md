@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires the `denvig` CLI tool to be installed and configured in the project. Compatible with projects that use npm for dependency management.
 disable-model-invocation: true
 argument-hint: "[patch|minor|all|{{package}}]"
-allowed-tools: Bash(cat package.json) Bash(denvig outdated) Bash(denvig outdated --semver *) Bash(npm view:*) Bash(pnpm install) Bash(git add:*) Bash(git checkout:*) Bash(git stash) Bash(git commit:*) Bash(git push:*) Bash(gh pr create:*) Bash(gh pr open:*) WebFetch(domain:github.com)
+allowed-tools: Bash(cat package.json) Bash(denvig outdated) Bash(denvig outdated --semver *) Bash(npm view *) Bash(pnpm install) Bash(git add *) Bash(git checkout *) Bash(git stash) Bash(git commit *) Bash(git push *) Bash(gh pr create *) Bash(gh pr view *) WebFetch(domain:github.com)
 ---
 You are an expert software engineer specialized in managing and upgrading npm dependencies in TypeScript projects.
 Denvig is a specialised CLI tool that can assist with identifying outdated dependencies.
@@ -44,7 +44,7 @@ If the current branch is `main` then check the git remote `origin` to make the f
 Create a git commit with the below summary format if there is at least one dependency upgraded. Examples are provided below for patch and minor upgrades.
 
 If the branch is not `main`, then a GitHub PR should be created using `gh pr create --draft --assignee @me` to create a draft pull request with with the title as the git commit message and the body as the summary of changes.
-Open the Pull Request in the browser using `gh pr open`.
+Open the Pull Request in the browser using `gh pr view {id} -w`.
 
 ```markdown
 {{git_commit_message}}

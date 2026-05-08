@@ -8,6 +8,7 @@ They're designed to work with Claude Code primarily but they should also be comp
 
 - [commit-changes](skills/commit-changes)
 - [create-pr](skills/create-pr)
+- [denvig-patch-npm-vulnerability](skills/denvig-patch-npm-vulnerability)
 - [denvig-upgrade-npm-dependencies](skills/denvig-upgrade-npm-dependencies)
 
 ## Install all skills

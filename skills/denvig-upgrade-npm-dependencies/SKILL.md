@@ -38,8 +38,9 @@ One you have completed the above steps for each package you should summarize all
 
 If the current git state is not clean then stash the current state, alerting the user to this at the end of the process.
 If the current branch is `main` then check the git remote `origin` to make the following choice:
-- If `origin` is a github.com remote then create a new branch called `denvig/upgrade-{{count}}-{{type}}-packages`
-- If `origin` is any other provider then use your AskUserQuestion tool to ask the user if they want to create a new branch or continue on main
+- If `origin` is a github.com remote then create a new branch called `denvig/upgrade-{{count}}-{{type}}-packages`.
+- If `origin` is any other provider then use your AskUserQuestion tool to ask the user if they want to create a new branch or continue on main.
+- You should always ask for clarification when github is not detected, even if auto mode is active.
 
 Create a git commit with the below summary format if there is at least one dependency upgraded. Examples are provided below for patch and minor upgrades.
 

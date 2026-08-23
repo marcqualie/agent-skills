@@ -90,6 +90,7 @@ A package can be installed at more than one version at once. Every copy has to c
 - If an alerted package was moved but is still vulnerable, or an alert relates to a package this run deliberately did not touch, mention it under `## Notes` rather than claiming it as fixed. Name the parent that pins it, from the `deps why` output.
 - Do not claim a count you have not verified against the version data. It is better to report fewer alerts accurately than to assume a whole package's alerts are cleared.
 - Dependabot will not close the alerts until the change is merged, so report them as resolved by this change rather than as already closed.
+- Copy the GHSA id, CVE id and summary out of the alert JSON when writing them up. They are not the sort of thing to recall from memory, and a plausible-looking GHSA id that belongs to a different advisory is worse than no link at all.
 - If the origin remote is not a GitHub repository, or the API call genuinely fails, omit the `## Vulnerabilities` section and state the specific error under `## Notes`.
 
 ## 5. Verify

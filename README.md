@@ -8,6 +8,7 @@ They're designed to work with Claude Code primarily but they should also be comp
 
 - [commit-changes](skills/commit-changes)
 - [create-pr](skills/create-pr)
+- [denvig-upgrade-github-actions](skills/denvig-upgrade-github-actions)
 - [denvig-upgrade-npm-dependencies](skills/denvig-upgrade-npm-dependencies)
 - [denvig-upgrade-rubygems-dependencies](skills/denvig-upgrade-rubygems-dependencies)
 
